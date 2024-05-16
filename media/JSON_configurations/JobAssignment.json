@@ -1,0 +1,317 @@
+{
+	"css": "base1.css",
+	"legend": "Player Details",
+	"HTML_fields": [
+		{
+			"tag": "select",
+			"type": "NA",
+			"class": "form-control",
+			"label": "Job",
+			"id": "job_interview",
+			"name": "job_interview",
+			"options": {
+				"A": "A1",
+				"B": "B1"
+			},
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Assignment Title",
+			"id": "assign_title",
+			"name": "assign_title",
+			"required": "true",
+			"maxlength": "100",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "datetime-local",
+			"class": "form-control",
+			"label": "Start date",
+			"id": "start_date",
+			"name": "start_date",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "datetime-local",
+			"class": "form-control",
+			"label": "End Date",
+			"id": "end_date",
+			"name": "end_date",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "file",
+			"class": "form-control",
+			"label": "Assignment Doc",
+			"id": "document",
+			"name": "document",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Text Field 1",
+			"id": "text_field_1",
+			"name": "text_field_1",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Text Field 2",
+			"id": "text_field_2",
+			"name": "text_field_2",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Integer Field 1",
+			"id": "int_field_1",
+			"name": "int_field_1",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Integer Field 2",
+			"id": "int_field_2",
+			"name": "int_field_2",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Float Field 1",
+			"id": "float_field_1",
+			"name": "float_field_1",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details here..."
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Float Field 2",
+			"id": "float_field_2",
+			"name": "float_field_2",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details here..."
+		},
+		{
+			"tag": "input",
+			"type": "datetime-local",
+			"class": "form-control",
+			"label": "DateTime Field 1",
+			"id": "datetime_field_1",
+			"name": "datetime_field_1",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "datetime-local",
+			"class": "form-control",
+			"label": "Datetime Field 2",
+			"id": "datetime_field_2",
+			"name": "datetime_field_2",
+			"required": "true"
+		},
+		{
+			"tag": "button",
+			"type": "submit",
+			"class": "btn btn-success",
+			"label": "Submit",
+			"id": "submit",
+			"name": "submit"
+		}
+	],
+	"HTML_table": {
+		"headers": [
+			"Job",
+			"Assignment Title",
+			"Start date",
+			"End Date",
+			"Assignment Doc",
+			"Text Field 1",
+			"Text Field 2",
+			"Integer Field 1",
+			"Integer Field 2",
+			"Float Field 1",
+			"Float Field 2",
+			"DateTime Field 1",
+			"Datetime Field 2"
+		],
+		"values": [
+			{
+				"name": "job_interview",
+				"type": "text"
+			},
+			{
+				"name": "assign_title",
+				"type": "text"
+			},
+			{
+				"name": "document",
+				"type": "file"
+			},
+			{
+				"name": "text_field_1",
+				"type": "text"
+			},
+			{
+				"name": "text_field_2",
+				"type": "text"
+			},
+			{
+				"name": "int_field_1",
+				"type": "text"
+			},
+			{
+				"name": "int_field_2",
+				"type": "text"
+			},
+			{
+				"name": "float_field_1",
+				"type": "text"
+			},
+			{
+				"name": "float_field_2",
+				"type": "text"
+			},
+			{
+				"name": "datetime_field_1",
+				"type": "text"
+			},
+			{
+				"name": "datetime_field_2",
+				"type": "text"
+			}
+		],
+		"searchable_fields": [
+			"job_interview",
+			"assign_title",
+			"start_date",
+			"end_date",
+			"document",
+			"text_field_1",
+			"text_field_2",
+			"int_field_1",
+			"int_field_2",
+			"float_field_1",
+			"float_field_2",
+			"datetime_field_1",
+			"datetime_field_2"
+		]
+	},
+	"Model_fields": {
+		"tableName": "JobAssignment",
+		"tableFields": [
+			{
+				"type": "CharField",
+				"name": "job_interview",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "assign_title",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "DateTimeField",
+				"name": "start_date",
+				"isBlank": "True",
+				"isNull": "True"
+			},
+			{
+				"type": "DateTimeField",
+				"name": "end_date",
+				"isBlank": "True",
+				"isNull": "True"
+			},
+			{
+				"type": "FileField",
+				"name": "document",
+				"isBlank": "True",
+				"isNull": "True",
+				"filePath": ""
+			},
+			{
+				"type": "CharField",
+				"name": "text_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "text_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "IntegerField",
+				"name": "int_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "IntegerField",
+				"name": "int_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "CharField",
+				"name": "float_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "float_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "DateTimeField",
+				"name": "datetime_field_1",
+				"isBlank": "True",
+				"isNull": "True"
+			},
+			{
+				"type": "DateTimeField",
+				"name": "datetime_field_2",
+				"isBlank": "True",
+				"isNull": "True"
+			}
+		]
+	}
+}

@@ -1,0 +1,9 @@
+from django.urls import path
+from <your application name> import views
+
+
+
+urlpatterns = [
+    path('$REDIRECT/', views.$CLASSNAME.as_view(), name='$REDIRECT'),
+
+]

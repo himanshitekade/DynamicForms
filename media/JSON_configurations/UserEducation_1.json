@@ -1,0 +1,425 @@
+{
+	"css": "base1.css",
+	"legend": "Player Details",
+	"HTML_fields": [
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "User",
+			"id": "user",
+			"name": "user",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter user"
+		},
+		{
+			"tag": "select",
+			"type": "NA",
+			"class": "form-control",
+			"label": "Education Type",
+			"id": "education_type",
+			"name": "education_type",
+			"options": {
+				"A": "A1",
+				"B": "B1"
+			},
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Passing year",
+			"id": "passing_year",
+			"name": "passing_year",
+			"required": "true",
+			"placeholder": "Enter passing year"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Board Name/University",
+			"id": "board_name",
+			"name": "board_name",
+			"maxlength": "200",
+			"required": "true",
+			"placeholder": "Enter your board name"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Specialization",
+			"id": "specialization",
+			"name": "specialization",
+			"maxlength": "200",
+			"required": "true",
+			"placeholder": "Enter your specialization"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Percentage/Cgpa",
+			"id": "percentage",
+			"name": "percentage",
+			"required": "true",
+			"placeholder": "Enter your percentage"
+		},
+		{
+			"tag": "input",
+			"type": "file",
+			"class": "form-control",
+			"label": "Marksheet",
+			"id": "marksheet",
+			"name": "marksheet",
+			"required": "true"
+		},
+		{
+			"tag": "textarea",
+			"type": "textarea_NA",
+			"class": "form-control",
+			"label": "Additional Qualification",
+			"id": "additional_qualification",
+			"name": "additional_qualification",
+			"maxlength": "500",
+			"required": "true",
+			"placeholder": "Enter your additional qualification"
+		},
+		{
+			"tag": "textarea",
+			"type": "textarea_NA",
+			"class": "form-control",
+			"label": "Comments",
+			"id": "comments",
+			"name": "comments",
+			"maxlength": "500",
+			"required": "true",
+			"placeholder": "Comments"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Text Field 1",
+			"id": "text_field_1",
+			"name": "text_field_1",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Text Field 2",
+			"id": "text_field_2",
+			"name": "text_field_2",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Integer Field 1",
+			"id": "int_field_1",
+			"name": "int_field_1",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Integer Field 2",
+			"id": "int_field_2",
+			"name": "int_field_2",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Float Field 1",
+			"id": "float_field_1",
+			"name": "float_field_1",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details here..."
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Float Field 2",
+			"id": "float_field_2",
+			"name": "float_field_2",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details here..."
+		},
+		{
+			"tag": "input",
+			"type": "datetime-local",
+			"class": "form-control",
+			"label": "DateTime Field 1",
+			"id": "datetime_field_1",
+			"name": "datetime_field_1",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "datetime-local",
+			"class": "form-control",
+			"label": "Datetime Field 2",
+			"id": "datetime_field_2",
+			"name": "datetime_field_2",
+			"required": "true"
+		},
+		{
+			"tag": "button",
+			"type": "submit",
+			"class": "btn btn-success",
+			"label": "Submit",
+			"id": "submit",
+			"name": "submit"
+		}
+	],
+	"HTML_table": {
+		"headers": [
+			"User",
+			"EducationType",
+			"Passing year",
+			"Board Name/University",
+			"Specialization",
+			"Percentage/Cgpa",
+			"Marksheet",
+			"Additional Qualification",
+			"Comments",
+			"Text Field 1",
+			"Text Field 2",
+			"Integer Field 1",
+			"Integer Field 2",
+			"Float Field 1",
+			"Float Field 2",
+			"DateTime Field 1",
+			"Datetime Field 2"
+		],
+		"values": [
+			{
+				"name": "user",
+				"type": "text"
+			},
+			{
+				"name": "education_type",
+				"type": "text"
+			},
+			{
+				"name": "passing_year",
+				"type": "text"
+			},
+			{
+				"name": "board_name",
+				"type": "text"
+			},
+			{
+				"name": "specialization",
+				"type": "text"
+			},
+			{
+				"name": "percentage",
+				"type": "text"
+			},
+			{
+				"name": "marksheet",
+				"type": "file"
+			},
+			{
+				"name": "additional_qualification",
+				"type": "text"
+			},
+			{
+				"name": "comments",
+				"type": "text"
+			},
+			{
+				"name": "text_field_1",
+				"type": "text"
+			},
+			{
+				"name": "text_field_2",
+				"type": "text"
+			},
+			{
+				"name": "int_field_1",
+				"type": "text"
+			},
+			{
+				"name": "int_field_2",
+				"type": "text"
+			},
+			{
+				"name": "float_field_1",
+				"type": "text"
+			},
+			{
+				"name": "float_field_2",
+				"type": "text"
+			},
+			{
+				"name": "datetime_field_1",
+				"type": "text"
+			},
+			{
+				"name": "datetime_field_2",
+				"type": "text"
+			}
+		],
+		"searchable_fields": [
+			"user",
+			"education_type",
+			"passing_year",
+			"board_name",
+			"specialization",
+			"percentage",
+			"marksheet",
+			"additional_qualification",
+			"comments",
+			"text_field_1",
+			"text_field_2",
+			"int_field_1",
+			"int_field_2",
+			"float_field_1",
+			"float_field_2",
+			"datetime_field_1",
+			"datetime_field_2"
+		]
+	},
+	"Model_fields": {
+		"tableName": "UserEducation",
+		"tableFields": [
+			{
+				"type": "CharField",
+				"name": "user",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "education_type",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "IntegerField",
+				"name": "passing_year",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "CharField",
+				"name": "board_name",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "200"
+			},
+			{
+				"type": "CharField",
+				"name": "specialization",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "200"
+			},
+			{
+				"type": "IntegerField",
+				"name": "percentage",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "FileField",
+				"name": "marksheet",
+				"isBlank": "True",
+				"isNull": "True",
+				"filePath": "usereducation_attachment"
+			},
+			{
+				"type": "CharField",
+				"name": "additional_qualification",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "500"
+			},
+			{
+				"type": "CharField",
+				"name": "comments",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "500"
+			},
+			{
+				"type": "CharField",
+				"name": "text_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "text_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "IntegerField",
+				"name": "int_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "IntegerField",
+				"name": "int_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "CharField",
+				"name": "float_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "float_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "DateTimeField",
+				"name": "datetime_field_1",
+				"isBlank": "True",
+				"isNull": "True"
+			},
+			{
+				"type": "DateTimeField",
+				"name": "datetime_field_2",
+				"isBlank": "True",
+				"isNull": "True"
+			}
+		]
+	}
+}

@@ -1,0 +1,169 @@
+'''
+Date of creation: $CREATEDTIME
+Created by: $USERNAME
+'''
+
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
+from django.views import View
+from .models import *
+from datetime import datetime
+from django.contrib import messages
+import json
+from django.db.models import Q
+import os
+from django.core.paginator import Paginator
+
+
+
+class $CLASSNAME(View):
+
+	def __init__(self,*args,**kwargs):
+		path = os.getcwd()
+
+		with open(os.path.join(path, "form_jsons/$FORMFILTER.json"), 'r') as file:
+			self.queryset = file.read()
+
+	def get(self,request,*args, **kwargs):
+		file = self.queryset 
+		queryset_dict = json.loads(file)
+
+		action = request.GET.get('action',None)
+		instance_id = request.GET.get('id',None)
+		search = request.GET.get('search',None)
+		entries = request.GET.get('entries', '5')
+
+		table_values = queryset_dict['HTML_table']['values']
+		list_table_values = [x["name"] for x in table_values]
+		
+		if action == 'create':	
+			context = {
+				"redirect":"$REDIRECT"
+			}       
+			return render(request, 'create.html', context)
+
+		elif action == 'edit':
+			if instance_id:
+				data = $MODELNAME.objects.filter(status=1).get(id=instance_id)
+
+				$DVARIABLE
+
+				json_string = str(queryset_dict)
+				context = {"data":data, "redirect":"$REDIRECT", $DATE_VARIABLE}
+				return render(request,'edit.html',context)
+
+		elif action == 'delete':	
+			if instance_id:
+				return self.delete(request)
+
+		elif action == 'search':
+			data = $MODELNAME.objects.filter($SEARCH_QUERY,status=1).all()
+
+			paginator = Paginator(data, int(entries)) 
+			page_number = request.GET.get('page')
+			page_obj = paginator.get_page(page_number)
+			pagination_url = request.path + "?entries=" + entries + "&search=" + search + "&action=" + action + "&"
+
+			#TODO: Uncomment if checkbox field is included in the form.
+			#for i in data:
+				#var =i.checkbox.replace("[","")
+				#var = var.replace("]","")
+				#var = var.replace("'", "")
+				#var = var.split(",")
+				#i.checkbox = var
+				#i.save()
+
+			context = {
+				"data":data, 
+				"values":table_values, 
+				"JsonForm": queryset_dict, 
+				"redirect":"$REDIRECT",
+				"entries" : entries,
+				"page_obj" : page_obj,
+                "pagination_url" : pagination_url,
+				}
+			return render(request,'table.html',context)
+
+		else:    						
+			data = $MODELNAME.objects.filter(status = 1).only(*list_table_values)
+
+
+			paginator = Paginator(data, int(entries)) 
+			page_number = request.GET.get('page')
+			page_obj = paginator.get_page(page_number)
+
+			if action:
+				pagination_url = request.path + "?entries=" + entries + "&action=" + action + "&"          
+			else:
+				pagination_url = request.path + "?entries=" + entries + "&"
+
+
+			#TODO: Uncomment if checkbox field is included in the form.
+			
+			#for i in data:
+				#var =i.checkbox.replace("[","")
+				#var = var.replace("]","")
+				#var = var.replace("'", "")
+				#var = var.split(",")
+				#i.checkbox = var
+				#i.save()
+
+			context = {
+				"data":data,
+				"redirect":"$REDIRECT",
+				"values":table_values,
+				"JsonForm": queryset_dict,
+				"entries" : entries,
+				"page_obj" : page_obj,
+               	"pagination_url" : pagination_url
+			}
+			return render(request,'table.html',context)
+
+    # Create
+	def post(self,request,*args, **kwargs):
+		if '_put' in request.POST:
+			return self.put(request)
+			
+		$REQUEST_IMPORT
+		
+		data = $MODELNAME.objects.create($ADD_UPDATE_FIELDS)
+
+		if data:
+			return redirect('$REDIRECT')
+
+    # Edit
+	def put(self,request,*args,**kwargs):
+		$REQUEST_IMPORT
+		id   = request.POST.get('id',None)
+
+		#TODO: Implement IF validation if file field available in the form
+
+		#if file:
+			#obj = $MODELNAME.objects.get(id=id)
+			#'''$FILE_SAVE'''
+			#obj.save()
+			
+		# TODO: Remove file field
+		update = $MODELNAME.objects.filter(id=id).update($ADD_UPDATE_FIELDS)
+		
+		#else: 
+		#	old_data = $MODELNAME.objects.get(id=id)
+
+		#	update = $MODELNAME.objects.filter(id=id).update($ADD_UPDATE_FIELDS)
+
+		if update:
+			return redirect('$REDIRECT')
+		else:
+			return HttpResponse("Not updated")
+
+    # Delete
+	def delete(self,request,*args,**kwargs):
+		id = request.GET.get('id',None)
+
+		update = $MODELNAME.objects.filter(id=id).update(status=0)
+		if update:
+			return redirect('$REDIRECT')
+		else:
+			return HttpResponse("Not updated")
+
+

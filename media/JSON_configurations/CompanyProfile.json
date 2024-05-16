@@ -1,0 +1,463 @@
+{
+	"css": "base1.css",
+	"legend": "Player Details",
+	"HTML_fields": [
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Company Name",
+			"id": "company_name",
+			"name": "company_name",
+			"required": "true",
+			"maxlength": "200"
+		},
+		{
+			"tag": "input",
+			"type": "file",
+			"class": "form-control",
+			"label": "logo",
+			"id": "logo",
+			"name": "logo",
+			"required": "true"
+		},
+		{
+			"tag": "textarea",
+			"type": "textarea_NA",
+			"class": "form-control",
+			"label": "Description",
+			"id": "description",
+			"name": "description",
+			"required": "true",
+			"maxlength": "500"
+		},
+		{
+			"tag": "input",
+			"type": "date",
+			"class": "form-control",
+			"label": "Founded Date",
+			"id": "founded_date",
+			"name": "founded_date",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Company Location/Address",
+			"id": "location",
+			"name": "location",
+			"required": "true",
+			"maxlength": "200"
+		},
+		{
+			"tag": "input",
+			"type": "tel",
+			"class": "form-control",
+			"label": "Contact Information",
+			"id": "contact_information",
+			"name": "contact_information",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "url",
+			"class": "form-control",
+			"label": "Website",
+			"id": "website",
+			"name": "website",
+			"required": "true",
+			"maxlength": "250"
+		},
+		{
+			"tag": "input",
+			"type": "url",
+			"class": "form-control",
+			"label": "FaceBook Url",
+			"id": "facebook_url",
+			"name": "facebook_url",
+			"required": "false",
+			"maxlength": "250"
+		},
+		{
+			"tag": "input",
+			"type": "url",
+			"class": "form-control",
+			"label": "Instagram Url",
+			"id": "instagram_url",
+			"name": "instagram_url",
+			"required": "false",
+			"maxlength": "250"
+		},
+		{
+			"tag": "input",
+			"type": "url",
+			"class": "form-control",
+			"label": "Linkedin Url",
+			"id": "linkedin_url",
+			"name": "linkedin_url",
+			"required": "false",
+			"maxlength": "250"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Industry",
+			"id": "industry",
+			"name": "industry",
+			"required": "true",
+			"maxlength": "100"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Number of Employees",
+			"id": "numbe_of_employees",
+			"name": "numbe_of_employees",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Revenue",
+			"id": "revenue",
+			"name": "revenue",
+			"required": "false"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Text Field 1",
+			"id": "text_field_1",
+			"name": "text_field_1",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Text Field 2",
+			"id": "text_field_2",
+			"name": "text_field_2",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Integer Field 1",
+			"id": "int_field_1",
+			"name": "int_field_1",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "number",
+			"class": "form-control",
+			"label": "Integer Field 2",
+			"id": "int_field_2",
+			"name": "int_field_2",
+			"required": "true",
+			"placeholder": "Enter details"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Float Field 1",
+			"id": "float_field_1",
+			"name": "float_field_1",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details here..."
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Float Field 2",
+			"id": "float_field_2",
+			"name": "float_field_2",
+			"maxlength": "100",
+			"required": "true",
+			"placeholder": "Enter details here..."
+		},
+		{
+			"tag": "input",
+			"type": "datetime-local",
+			"class": "form-control",
+			"label": "DateTime Field 1",
+			"id": "datetime_field_1",
+			"name": "datetime_field_1",
+			"required": "true"
+		},
+		{
+			"tag": "input",
+			"type": "datetime-local",
+			"class": "form-control",
+			"label": "Datetime Field 2",
+			"id": "datetime_field_2",
+			"name": "datetime_field_2",
+			"required": "true"
+		},
+		{
+			"tag": "button",
+			"type": "submit",
+			"class": "btn btn-success",
+			"label": "Submit",
+			"id": "submit",
+			"name": "submit"
+		}
+	],
+	"HTML_table": {
+		"headers": [
+			"Company Name",
+			"logo",
+			"Description",
+			"Founded Date",
+			"Company Location/Address",
+			"Contact Information",
+			"Website",
+			"FaceBook Url",
+			"Instagram Url",
+			"Linkedin Url",
+			"Industry",
+			"Number of Employees",
+			"Revenue"
+		],
+		"values": [
+			{
+				"name": "company_name",
+				"type": "text"
+			},
+			{
+				"name": "logo",
+				"type": "file"
+			},
+			{
+				"name": "description",
+				"type": "text"
+			},
+			{
+				"name": "founded_date",
+				"type": "text"
+			},
+			{
+				"name": "location",
+				"type": "text"
+			},
+			{
+				"name": "contact_information",
+				"type": "text"
+			},
+			{
+				"name": "website",
+				"type": "text"
+			},
+			{
+				"name": "facebook_url",
+				"type": "text"
+			},
+			{
+				"name": "instagram_url",
+				"type": "text"
+			},
+			{
+				"name": "linkedin_url",
+				"type": "text"
+			},
+			{
+				"name": "industry",
+				"type": "text"
+			},
+			{
+				"name": "numbe_of_employees",
+				"type": "text"
+			},
+			{
+				"name": "revenue",
+				"type": "text"
+			}
+		],
+		"searchable_fields": [
+			"company_name",
+			"logo",
+			"description",
+			"founded_date",
+			"location",
+			"contact_information",
+			"website",
+			"facebook_url",
+			"instagram_url",
+			"linkedin_url",
+			"industry",
+			"numbe_of_employees",
+			"revenue",
+			"text_field_1",
+			"text_field_2",
+			"int_field_1",
+			"int_field_2",
+			"float_field_1",
+			"float_field_2",
+			"datetime_field_1",
+			"datetime_field_2"
+		]
+	},
+	"Model_fields": {
+		"tableName": "CompanyProfile",
+		"tableFields": [
+			{
+				"type": "CharField",
+				"name": "company_name",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "200"
+			},
+			{
+				"type": "FileField",
+				"name": "logo",
+				"isBlank": "True",
+				"isNull": "True",
+				"filePath": "CompanyProfile_attachment"
+			},
+			{
+				"type": "CharField",
+				"name": "description",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "500"
+			},
+			{
+				"type": "DateField",
+				"name": "founded_date",
+				"isBlank": "True",
+				"isNull": "True"
+			},
+			{
+				"type": "CharField",
+				"name": "location",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "200"
+			},
+			{
+				"type": "PhoneNumberField",
+				"name": "contact_information",
+				"isBlank": "True",
+				"isNull": "True"
+			},
+			{
+				"type": "CharField",
+				"name": "website",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "250"
+			},
+			{
+				"type": "CharField",
+				"name": "facebook_url",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "250"
+			},
+			{
+				"type": "CharField",
+				"name": "instagram_url",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "250"
+			},
+			{
+				"type": "CharField",
+				"name": "linkedin_url",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "250"
+			},
+			{
+				"type": "CharField",
+				"name": "industry",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "IntegerField",
+				"name": "numbe_of_employees",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "IntegerField",
+				"name": "revenue",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "CharField",
+				"name": "text_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "text_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "IntegerField",
+				"name": "int_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "IntegerField",
+				"name": "int_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"default": "0"
+			},
+			{
+				"type": "CharField",
+				"name": "float_field_1",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "float_field_2",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "DateTimeField",
+				"name": "datetime_field_1",
+				"isBlank": "True",
+				"isNull": "True"
+			},
+			{
+				"type": "DateTimeField",
+				"name": "datetime_field_2",
+				"isBlank": "True",
+				"isNull": "True"
+			}
+		]
+	}
+}

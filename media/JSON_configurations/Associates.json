@@ -1,0 +1,163 @@
+{
+	"HTML_fields": [
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Name",
+			"id": "name",
+			"name": "name",
+			"required": "True", 
+			"placeholder": "Enter Associates Name"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Email Id",
+			"id": "email_id",
+			"name": "email_id",
+			"required": "True", 
+			"placeholder": "Enter Your Email Id"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Contact Person",
+			"id": "contact_person",
+			"name": "contact_person",
+			"required": "True", 
+			"placeholder": "Enter Contact Person"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Email Id CC",
+			"id": "email_id_cc",
+			"name": "email_id_cc",
+			"required": "True", 
+			"placeholder": "Enter Email Id with Comma(,) Seperated"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Date",
+			"id": "date",
+			"name": "date",
+			"required": "True", 
+			"placeholder": "Enter date"
+		},
+		{
+			"tag": "input",
+			"type": "text",
+			"class": "form-control",
+			"label": "Document Name",
+			"id": "document_name",
+			"name": "document_name",
+			"required": "True", 
+			"placeholder": "Enter Document Name"
+		},
+		{
+			"tag":"button",
+			"type":"submit",
+			"class":"btn btn-success",
+			"label":"Submit",
+			"value":"submit",
+			"name":"submit"
+		}
+	],
+	"HTML_table": {
+		"headers": [
+			"Name",
+			"Email Id",
+			"Contact Person",
+			"Email Id CC",
+			"Date",
+			"Document Name"
+		],
+		"values": [
+			{
+				"name": "name",
+				"type": "text"
+			},
+			{
+				"name": "email_id",
+				"type": "text"
+			},
+			{
+				"name": "contact_person",
+				"type": "text"
+			},
+			{
+				"name": "email_id_cc",
+				"type": "text"
+			},
+			{
+				"name": "date",
+				"type": "text"
+			}
+			,
+			{
+				"name": "document_name",
+				"type": "text"
+			}
+		],
+		"searchable_fields": [
+			"name",
+			"email_id",
+			"contact_person",
+			"email_id_cc",
+			"date",
+			"document_name"
+		]
+	},
+	"Model_fields": {
+		"tableName": "Associates",
+		"tableFields": [
+			{
+				"type": "CharField",
+				"name": "name",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "email_id",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "contact_person",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			},
+			{
+				"type": "CharField",
+				"name": "email_id_cc",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "500"
+			},
+			{
+				"type": "DateField",
+				"name": "date",
+				"isBlank": "True",
+				"isNull": "True"
+			},
+			{
+				"type": "CharField",
+				"name": "document_name",
+				"isBlank": "True",
+				"isNull": "True",
+				"maxLength": "100"
+			}
+		]
+	}
+}

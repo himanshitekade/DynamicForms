@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Add Details</h3>
+                            <div class="nk-block-des text-soft">
+                                 
+                            </div>
+                        </div><!-- .nk-block-head-content -->
+                        <div class="nk-block-head-content">
+                            <div class="toggle-wrap nk-block-tools-toggle">    
+                            </div><!-- .toggle-wrap -->
+                        </div><!-- .nk-block-head-content -->
+                    </div><!-- .nk-block-between -->
+                </div><!-- .nk-block-head -->
+                <form action="{% url redirect %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}               
+                    <div class="nk-block">
+                        <div class="card card-bordered card-stretch">
+                            <div class="card-inner-group">
+                                <div class="card-inner position-relative card-tools-toggle">
+                                    <div class="row gy-4">
+                                    	<input type="text" hidden name="_put">
+        									<input type="text" hidden name="id" value="{{data.id}}">
+                                    	
+                    						
+                    							
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="name" class="form-label"> Name </label>
+															
+						                    				<span style="color:red;">*</span>
+						                  					
+						                  					<div class="form-control-wrap">
+						                  						<input type="text" class="form-control" id="name" name="name" value="{{data.name}}"
+						                  						 placeholder="Enter Project Name"        required >
+							                  				</div>	
+						                  				</div>
+                                        			</div><!--col-->
+                                        			
+			                                    
+			                            
+                    						
+			                                <div class="col-xxl-3 col-md-6">
+                                            	<div class="form-group">
+                                            		<label for="client" class="form-label"> Client: </label>
+													
+							                  		<div class="form-control-wrap">
+							                  			<select class="form-select" name="client" class="form-select"     >
+							                  			
+															<option disabled>--select--</option>
+									          				
+									          					<option {% if data.client == "Python" %} selected {% endif %} value="Python">Python</option>
+									          				
+									          					<option {% if data.client == "Django" %} selected {% endif %} value="Django">Django</option>
+									          				
+					            							
+	        											</select>
+	        										</div>
+			                                    </div>	
+			                                </div><!--col-->
+			                                    
+			                            
+                    						
+			                                    
+                                        			<div class="col-12">
+                                            			<div class="form-group">
+                                                			<div class="form-group">
+				                                    			<button type="submit" class="btn btn-success" name= "action" value="submit"     >Submit</button>
+			                                    			</div>
+                                                	
+			                                    	</div><!--col-->
+			                            	    
+			                                  
+                                    </div><!--row-->
+                                </div><!-- .card-inner -->
+                            </div><!-- .card-inner-group -->
+                        </div><!-- .card -->
+                    </div><!-- .nk-block -->
+                </form>
+           	</div>
+        </div>
+    </div>
+</div>{% endblock content %}
+
+{% block script %}
+<script src="{% static 'assets/js/checkboxValidation.js' %}"></script>
+{% endblock script %}

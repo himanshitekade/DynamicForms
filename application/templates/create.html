@@ -1,0 +1,283 @@
+
+<div class="nk-content ">
+    <div class="container-fluid">
+        <div class="nk-content-inner">
+            <div class="nk-content-body">
+                <div class="nk-block-head nk-block-head-sm">
+                    <div class="nk-block-between">
+                        <div class="nk-block-head-content">
+                            <h3 class="nk-block-title page-title">Add Details</h3>
+                            <div class="nk-block-des text-soft">
+                                {% if messages %}
+                                    {% for message in messages %}   
+                                        <div class="example-alert">
+                                            <div class="alert alert-{{ message.tags}} alert-dismissible alert-icon"><strong>{{message}}</strong><button class="close" data-bs-dismiss="alert"></button>
+                                            </div>
+                                        </div>
+                                    {% endfor %}   
+                                {% endif %} 
+                            </div>
+                        </div><!-- .nk-block-head-content -->
+                        <div class="nk-block-head-content">
+                            <div class="toggle-wrap nk-block-tools-toggle">    
+                            </div><!-- .toggle-wrap -->
+                        </div><!-- .nk-block-head-content -->
+                    </div><!-- .nk-block-between -->
+                </div><!-- .nk-block-head -->
+                <form action="\% url redirect %/" method="post" enctype="multipart/form-data">
+                    \% csrf_token %/               
+                    <div class="nk-block">
+                        <div class="card card-bordered card-stretch">
+                            <div class="card-inner-group">
+                                <div class="card-inner position-relative card-tools-toggle">
+                                    <div class="row gy-4">
+                                    	{% for i in HTML_fields %}
+                    						{% if i.tag == "input" %}
+                    							{% if i.type == "text" %}
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+						                    				<span style="color:red;">*</span>
+						                  					{% endif %}
+						                  					<div class="form-control-wrap">
+							                  					<input type="{{i.type}}" class="{{i.class}}" id="{{i.id}}" name="{{i.name}}" value="" {% if i.placeholder %} placeholder="{{i.placeholder}}" {% endif %} {% if i.disabled == "true" %} disabled {% endif %} {% if i.min %} min="{{i.min}}" {% endif %} {% if i.max %} max="{{i.max}}" {% endif %}{% if i.required == "true" %} required {% endif %} {% if i.readonly == "true" %} readonly {% endif %} {% if i.autofocus == "true" %} autofocus {% endif %}>
+							                  				</div>	
+						                  				</div>
+                                        			</div><!--col-->
+                                        			{% elif i.type == "number" %}
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                                			<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}		
+                                                			<div class="form-control-wrap">
+																<input type="{{i.type}}" class="{{i.class}}" id="{{i.id}}" name="{{i.name}}" {% if i.placeholder %} placeholder="{{i.placeholder}}" {% endif %} {% if i.disabled == "true" %} disabled {% endif %} {% if i.min %} min="{{i.min}}" {% endif %} {% if i.max %} max="{{i.max}}" {% endif %}{% if i.required == "true" %} required {% endif %} 
+																{% if i.readonly == "true" %} readonly {% endif %} 
+																{% if i.autofocus == "true" %} autofocus {% endif %}>
+															</div>	
+														</div>    
+                                            		</div><!--col-->
+                                            		{% elif i.type == "checkbox" %}
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				{% for key, value in i.label1.items() %}	
+  	                                            			<div class="form-control-wrap">
+                                                    			<input type="{{i.type}}" value="{{value}}" name="{{i.name}}"
+                                                    			onchange='ifChecked(this.name)'
+                                                    			{% if i.required == "true" %} required {% endif %}  {% if i.disabled == "true" %} disabled {% endif %} {% if i.readonly == "true" %} readonly {% endif %}>{{key}}
+                                                			</div>
+                                                			{% endfor %}    
+                                            			</div>
+                                        			</div><!--col-->
+                                        			{% elif  i.type == "radio" %}
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				{% for key, value in i.label1.items() %}
+															<div class="form-control-wrap">
+																<input type="{{i.type}}" value="{{value}}" name="{{i.name}}" {% if i.required == "true" %} required {% endif %}  {% if i.disabled == "true" %} disabled {% endif %} {% if i.readonly == "true" %} readonly {% endif %}>{{key}}
+															</div>
+															{% endfor %}
+                                            			</div>
+                                        			</div><!--col-->
+                                        			{% elif i.type == "date" %}
+                                        			<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+							                  					<input type="{{i.type}}" class="{{i.class}}" id="{{i.id}}" name="{{i.name}}" {% if i.multiple == "true" %} multiple {% endif %} {% if i.disabled == "true"%} disabled {% endif %} 
+																{% if i.required == "true" %} required {% endif %} {% if i.readonly == "true" %} readonly {% endif %} {% if i.autofocus == "true" %} autofocus {% endif %} {% if i.accept %} accept="{{i.accept}}" {% endif %}>
+							                  				</div>
+							                  			</div>
+							                  		</div><!--col-->
+							                  		{% elif i.type == "file" %}
+							                  		<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+																<input type="{{i.type}}" class="{{i.class}}" id="{{i.id}}" name="{{i.name}}" {% if i.multiple == "true" %} multiple {% endif %} {% if i.disabled == "true"%} disabled {% endif %} {% if i.required == "true" %} required {% endif %} {% if i.readonly == "true" %} readonly {% endif %} {% if i.autofocus == "true" %} autofocus {% endif %} {% if i.accept %} accept="{{i.accept}}" {% endif %}>
+							                  				</div>
+							                  			</div>
+							                  		</div><!--col-->
+							                  		{% elif i.type == "color" %}
+							                  		<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+																<input type="{{i.type}}" id="{{i.id}}" name="{{i.name}}" class="{{i.class}}" {% if i.disabled == "true" %} disabled {% endif %} {% if i.required == "true" %} required {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}"{% endif %}>
+															</div>
+							                  			</div>
+							                  		</div><!--col-->
+							                  		{% elif i.type == "week" %}
+							                  		<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+								                  				<input type="{{i.type}}" id="{{i.id}}" name="{{i.name}}" class="{{i.class}}" {% if i.disabled == "true" %} disabled {% endif %} {% if i.required == "true" %} required {% endif %} {% if i.readonly == "true" %} readonly {% endif %} {% if i.min %} min="{{i.min}}" {% endif %} {% if i.max %} max="{{i.max}}" {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}" {% endif %}>
+								                  			</div>
+								                  		</div>
+								                  	</div><!--col-->
+								                  	{% elif i.type == "email" %}
+								                  	<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+	                  											<input type="{{i.type}}" class="{{i.class}}" id="{{i.id}}" name="{{i.name}}" {% if i.placeholder %} placeholder="{{i.placeholder}}"{% endif %} {% if i.maxlength %} maxlength="{{i.maxlength}}" {% endif %} {% if i.minlength %} minlength="{{i.minlength}}" {% endif %} {% if i.required == "true" %} required {% endif %} {% if i.disabled == "true" %} disabled {% endif %} 
+	                  											{% if i.readonly == "true" %} readonly {% endif %} {% if i.multiple == "true" %} multiple {% endif %} 
+	                  											{% if i.pattern %} pattern="{{i.pattern}}" {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}"{% endif %}>
+	                  										</div>
+	                  									</div>
+	                  								</div><!--col-->
+	                  								{% elif i.type == "month" or i.type == "time" or i.type == "datetime-local" %}
+	                  								<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+								                  				<input type="{{i.type}}" id="{{i.id}}" name="{{i.name}}" class="{{i.class}}"
+																{% if i.disabled == "true" %} disabled {% endif %} {% if i.required == "true" %} required {% endif %} 
+																{% if i.readonly == "true" %} readonly {% endif %} {% if i.min %} min="{{i.min}}" {% endif %} {% if i.max %} max="{{i.max}}" {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}"{% endif %}>
+															</div>
+	                  									</div>
+	                  								</div><!--col-->
+	                  								{% elif i.type == "tel" %}
+	                  								<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+	                  											<input type="{{i.type}}" class="{{i.class}}" id="{{i.id}}" name="{{i.name}}" {% if i.placeholder %} placeholder="{{i.placeholder}}" {% endif %} {% if i.disabled == "true" %} disabled {% endif %} {% if i.pattern %} pattern="{{i.pattern}}"{% endif %} 
+	                  											{% if i.required == "true" %} required {% endif %} {% if i.maxlength %} maxlength="{{i.maxlength}}" {% endif %} {% if i.maxlength %} maxlength="{{i.maxlength}}" {% endif %} {% if i.readonly == "true" %} readonly {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}"{% endif %}>
+	                  										</div>
+	                  									</div>
+	                  								</div><!--col-->
+	                  								{% elif i.type == "password" %}
+	                  								<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+	                  											<input type="{{i.type}}" class="{{i.class}}" id="{{i.id}}"name="{{i.name}}" {% if i.placeholder %} placeholder="{{i.placeholder}}" {% endif %} {% if i.pattern %} pattern="{{i.pattern}}" {% endif %} {% if i.required == "true" %} required {% endif %} {% if i.maxlength %} maxlength="{{i.maxlength}}" {% endif %} {% if i.minlength %} minlength="{{i.minlength}}" {% endif %} {% if i.disabled == "true" %} disabled {% endif %} {% if i.readonly == "true" %} readonly {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}"{% endif %}>
+	                  										</div>
+	                  									</div>
+	                  								</div><!--col-->
+	                  								{% elif i.type == "url" or  i.type == "search" %}
+	                  								<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+																<input type="{{i.type}}" class="{{i.class}}" id="{{i.id}}" name="{{i.name}}" {% if i.placeholder %} placeholder="{{i.placeholder}}"{% endif %}
+																{% if i.required == "true" %} required {% endif %} {% if i.readonly == "true" %} readonly {% endif %} {% if i.maxlength %} maxlength="{{i.maxlength}}" {% endif %} {% if i.minlength %} minlength="{{i.minlength}}" {% endif %} {% if i.disabled == "true" %} disabled {% endif %} {% if i.pattern %} pattern="{{i.pattern}}" {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}"{% endif %}>
+															</div>
+														</div>
+													</div><!--col-->
+													{% elif i.type == "range" %}
+													<div class="col-xxl-3 col-md-6">
+                                            			<div class="form-group">
+                                            				<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+															{% if i.required == "true" %}
+							                    			<span style="color:red;">*</span>
+							                  				{% endif %}
+							                  				<div class="form-control-wrap">
+	                  											<input type="{{i.type}}" id="{{i.id}}" name="{{i.name}}" {% if i.min %} min="{{i.min}}" {% endif %} {% if i.max %} max="{{i.max}}" {% endif %} {% if i.required == "true" %} required {% endif %} 
+	                  											{% if i.disabled == "true" %} disabled {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}"{% endif %}>
+	                  										</div>	
+			                                        	</div>	
+			                                        </div><!--col-->
+			                                   	{% endif %}
+			                                {% elif i.tag == "select" %}
+			                                <div class="col-xxl-3 col-md-6">
+                                            	<div class="form-group">
+                                            		<label for="{{i.name}}" class="form-label"> {{i.label}} </label>
+													{% if i.required == "true" %}
+							                    		<span style="color:red;">*</span>
+							                  		{% endif %}
+							                  		<div class="form-control-wrap">
+							                  			<select class="form-select" name="{{i.name}}" class="{{i.class}}" {% if i.required == "true" %} required {% endif %} {% if i.autofocus == "true" %} autofocus {% endif %} {% if i.multiple == "true" %} multiple {% endif %} {% if i.disabled == "true" %} disabled {% endif %} {% if i.readonly == "true" %} readonly {% endif %}>
+							                  			{% if i.optgroup %}
+															<option>--select--</option>
+															{% for opt in i.optgroup %}
+															{% for label, value in opt.items %}
+															<optgroup label="{{label}}">
+																{% for k in value %}
+																	<option value="{{k.1}}">{{k.0}}</option>
+																{% endfor %} 
+								  							</optgroup>
+					  										{% endfor %}
+				  											{% endfor %}
+														{% else %}
+															<option>--select--</option>
+					          								{% for k, j in i.options.items() %}
+									          					<option value="{{k}}">{{j}}</option>
+												          	{% endfor %}
+								            			{% endif %}	
+	        											</select>
+	        										</div>
+			                                    </div>	
+			                                </div><!--col-->
+			                                {% elif i.tag == "textarea" %}
+			                                <div class="col-xxl-3 col-md-6">
+			                                	<div class="form-group">
+			                                      	<label for="{{i.name}}" class="form-label">
+														{{i.label}}
+													</label>
+													{% if i.required == "true" %}
+                										<span style="color:red;">*</span>
+              										{% endif %}
+              										<div class="form-control-wrap">
+	                  									<textarea  class ="{{i.class}}" id="{{i.id}}" name="{{i.name}}" rows="{{i.rows}}" cols="{{i.cols}}" {% if i.required == "true" %} required {% endif %} {% if i.autofocus == "true" %} autofocus {% endif %} {% if i.disabled == "true" %} disabled {% endif %} {% if i.maxlength %} maxlength="{{i.maxlength}}" {% endif %} {% if i.minlength %} minlength="{{i.minlength}}" {% endif %} {% if i.placeholder %} placeholder="{{i.placeholder}}" {% endif %} {% if i.autocomplete %} autocomplete="{{i.autocomplete}}"{% endif %} {% if i.readonly == "true"%} readonly {% endif %}></textarea>
+	                  								</div>
+			                                    </div>	
+			                                </div><!--col-->
+			                                {% elif i.tag == "button" %}
+			                                    {% if i.type == "submit" or i.type == "reset" %}
+                                        			<div class="col-12">
+                                            			<div class="form-group">
+                                                			<button type="{{i.type}}" class="{{i.class}}" name= "action" value="{{value}}"{% if i.disabled == "true" %} disabled {% endif %} {% if i.autofocus == "true" %} autofocus {% endif %} {% if i.required == "true" %} required {% endif %} {% if i.readonly == "true"%} readonly {% endif %}>{{i.label}}</button>
+                                                {% endif %}	
+			                                    	</div><!--col-->
+			                            	{% endif %}    
+			                            {% endfor %}      
+                                    </div><!--row-->
+                                </div><!-- .card-inner -->
+                            </div><!-- .card-inner-group -->
+                        </div><!-- .card -->
+                    </div><!-- .nk-block -->
+                </form>
+           	</div>
+        </div>
+    </div>
+</div>

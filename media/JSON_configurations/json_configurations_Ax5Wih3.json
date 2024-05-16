@@ -1,0 +1,89 @@
+{
+    "css":"base_configuration.css",
+    "legend": "Json configurations",
+    "HTML_fields":[
+        {
+            "tag":"input",
+            "type":"file",
+            "label":"Upload json:",
+            "id":"file",
+            "class": "form-control",
+            "name":"file",
+            "required":"true",
+            "multiple":"false",
+            "autofocus":"false",
+            "accept":".json"
+        },
+        {
+            "tag":"input",
+            "type":"text",
+            "label":"Form name:",
+            "id":"form_name",
+            "class":"form-control",
+            "name":"formName",
+            "placeholder":"Enter name of the form",
+            "required":"true"
+        },
+        {
+            "tag":"input",
+            "type":"text",
+            "label":"Version:",
+            "id":"version",
+            "class":"form-control",
+            "name":"version",
+            "placeholder":"Enter version of the form",
+            "required":"true"
+        },
+
+        {
+            "tag":"button",
+            "type":"submit",
+            "class": "btn btn-success",
+            "name": "button", 
+            "value":"button",
+            "disabled":"false",
+            "label":"Submit"
+        }
+    ],
+    "HTML_table":{
+            "headers":["Name","Version"],
+            "values":[
+                {
+                    "name":"name",
+                    "type":"text"
+                },
+                {
+
+                    "name":"version",
+                    "type":"text"
+                }
+            ],
+            "searchable_fields":["form_name","version"]
+        },
+        "Model_fields":{
+            "tableName":"JsonUserForm",
+            "tableFields":[
+                {
+                    "type":"CharField",
+                    "name":"form_name",
+                    "maxLength":"200",
+                    "isBlank":"False",
+                    "isNull":"True"             
+                },
+                {
+                    "type":"CharField",
+                    "name":"version",
+                    "maxLength":"200",
+                    "isBlank":"False",
+                    "isNull":"True"             
+                },
+                {
+                    "type":"FileField",
+                    "name":"file",
+                    "filePath":"",
+                    "isBlank":"False",
+                    "isNull":"False"
+                }
+            ]
+        }
+}
